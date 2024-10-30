@@ -10,9 +10,9 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label Content="Логин" Margin="10"></Label>
+            <Label Content="Логин:" Margin="10"></Label>
             <TextBox x:Name="LoginBox"></TextBox>
-            <Label Content="Логин" Margin="10"></Label>
+            <Label Content="Пароль:" Margin="10"></Label>
             <PasswordBox x:Name="PasswordTextBox"></PasswordBox>
             <Button x:Name="LoginButton" Content="Войти" Click="LoginButton_Click" Margin="10"></Button>
         </StackPanel>

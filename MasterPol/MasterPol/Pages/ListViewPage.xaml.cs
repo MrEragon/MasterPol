@@ -23,9 +23,28 @@ namespace MasterPol.Pages
         public ListViewPage()
         {
             InitializeComponent();
+            Init();
         }
 
+        private void Init()
+        {
+            ViewPartner.ItemsSource = Data.ProductsTrainingEntities.GetContext().Partners.ToList();
+        }
+        
         private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Classes.Manager.MainFrame.CanGoBack)
+            {
+                Classes.Manager.MainFrame.GoBack();
+            }
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

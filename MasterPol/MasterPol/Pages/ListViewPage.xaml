@@ -16,25 +16,45 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
             <ListView x:Name="ViewPartner" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="200"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-                <Grid Grid.Column="0">
-                    <StackPanel>
-                        <TextBlock Text="{Binding TypePartner.Name ,StringFormat=\{0\}}"></TextBlock>
-                    </StackPanel>
-                </Grid>
-                <Grid Grid.Column="1">
-                    
-                </Grid>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1}">
+                                            <Binding Path="TypePartner.Name"></Binding>
+                                            <Binding Path="NamePartner.Name"></Binding>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                                            <Binding Path="DirectorLastName"></Binding>
+                                            <Binding Path="DirectorFirstName"></Binding>
+                                            <Binding Path="DirectorPatronymic"></Binding>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Text="{Binding PhonePartner, StringFormat= \{0\}}"></TextBlock>
+                                <TextBlock Text="{Binding Rating, StringFormat={}Рейтинг: \{0\}}"></TextBlock>
+                            </StackPanel>
+                            <Label Grid.Column="1" Content="100%"></Label>
+                            <Button Grid.Column="2" Content="Редактировать" x:Name="EditButton" Click="EditButton_Click"></Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </Grid>
         <Grid Grid.Row="2">
-            <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click"></Button>
+            <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click" HorizontalAlignment="Left" Margin="10"></Button>
+            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" HorizontalAlignment="Right" Margin="10"></Button>
         </Grid>
     </Grid>
 </Page>
