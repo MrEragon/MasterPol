@@ -21,7 +21,6 @@ namespace MasterPol.Data
         public string DirectorFirstName { get; set; }
         public string DirectorPatronymic { get; set; }
         public string EmailPartner { get; set; }
-        public string Password { get; set; }
         public string PhonePartner { get; set; }
         public int MailIndex { get; set; }
         public string Area { get; set; }

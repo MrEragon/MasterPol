@@ -123,17 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\ListViewPage.xaml.cs">
       <DependentUpon>ListViewPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -172,12 +165,11 @@
     <Resource Include="Resources\Мастер пол.ico" />
     <Resource Include="Resources\Мастер пол.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Data\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Data\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

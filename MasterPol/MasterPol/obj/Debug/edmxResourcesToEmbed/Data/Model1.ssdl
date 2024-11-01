@@ -35,7 +35,6 @@
     <Property Name="DirectorFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DirectorPatronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="EmailPartner" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="PhonePartner" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MailIndex" Type="int" Nullable="false" />
     <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />

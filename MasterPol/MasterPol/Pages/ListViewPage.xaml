@@ -45,7 +45,7 @@
                                 <TextBlock Text="{Binding PhonePartner, StringFormat= \{0\}}"></TextBlock>
                                 <TextBlock Text="{Binding Rating, StringFormat={}Рейтинг: \{0\}}"></TextBlock>
                             </StackPanel>
-                            <Label Grid.Column="1" Content="100%"></Label>
+                            <Label Grid.Column="1" Content="error!"></Label>
                             <Button Grid.Column="2" Content="Редактировать" x:Name="EditButton" Click="EditButton_Click"></Button>
                         </Grid>
                     </DataTemplate>

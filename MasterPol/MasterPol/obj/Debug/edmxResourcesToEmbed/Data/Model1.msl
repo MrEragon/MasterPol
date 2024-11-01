@@ -38,7 +38,6 @@
           <ScalarProperty Name="DirectorFirstName" ColumnName="DirectorFirstName" />
           <ScalarProperty Name="DirectorPatronymic" ColumnName="DirectorPatronymic" />
           <ScalarProperty Name="EmailPartner" ColumnName="EmailPartner" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="PhonePartner" ColumnName="PhonePartner" />
           <ScalarProperty Name="MailIndex" ColumnName="MailIndex" />
           <ScalarProperty Name="Area" ColumnName="Area" />
