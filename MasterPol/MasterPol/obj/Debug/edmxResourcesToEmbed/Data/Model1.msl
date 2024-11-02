@@ -54,7 +54,7 @@
         <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDProductType" ColumnName="IDProductType" />
-          <ScalarProperty Name="NameProduction" ColumnName="NameProduction" />
+          <ScalarProperty Name="IDNameProduction" ColumnName="IDNameProduction" />
           <ScalarProperty Name="Article" ColumnName="Article" />
           <ScalarProperty Name="MinCostForPartner" ColumnName="MinCostForPartner" />
         </MappingFragment>

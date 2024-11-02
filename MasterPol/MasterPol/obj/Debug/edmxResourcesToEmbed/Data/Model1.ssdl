@@ -36,12 +36,12 @@
     <Property Name="DirectorPatronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="EmailPartner" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="PhonePartner" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="MailIndex" Type="int" Nullable="false" />
+    <Property Name="MailIndex" Type="int" />
     <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Street" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="House" Type="int" Nullable="false" />
-    <Property Name="INN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="INN" Type="nvarchar" MaxLength="50" />
     <Property Name="Rating" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
@@ -50,7 +50,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDProductType" Type="int" Nullable="false" />
-    <Property Name="NameProduction" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="IDNameProduction" Type="int" Nullable="false" />
     <Property Name="Article" Type="int" Nullable="false" />
     <Property Name="MinCostForPartner" Type="decimal" Precision="18" Scale="2" Nullable="false" />
   </EntityType>
@@ -135,6 +135,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Products_NameProduction">
+    <End Role="NameProduction" Type="Self.NameProduction" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NameProduction">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="IDNameProduction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Products_ProductType">
     <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -172,6 +184,10 @@
     <AssociationSet Name="FK_Partners_TypePartner" Association="Self.FK_Partners_TypePartner">
       <End Role="TypePartner" EntitySet="TypePartner" />
       <End Role="Partners" EntitySet="Partners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_NameProduction" Association="Self.FK_Products_NameProduction">
+      <End Role="NameProduction" EntitySet="NameProduction" />
+      <End Role="Products" EntitySet="Products" />
     </AssociationSet>
     <AssociationSet Name="FK_Products_ProductType" Association="Self.FK_Products_ProductType">
       <End Role="ProductType" EntitySet="ProductType" />

@@ -23,6 +23,7 @@
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
                                 <TextBlock>
@@ -47,14 +48,14 @@
                             </StackPanel>
                             <Label Grid.Column="1" Content="error!"></Label>
                             <Button Grid.Column="2" Content="Редактировать" x:Name="EditButton" Click="EditButton_Click"></Button>
+                            <Button Grid.Column="3" Content="Посмотреть историю" x:Name="HistoryButton" Click="HistoryButton_Click"></Button>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
         <Grid Grid.Row="2">
-            <Button x:Name="BackButton" Content="Назад" Click="BackButton_Click" HorizontalAlignment="Left" Margin="10"></Button>
-            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" HorizontalAlignment="Right" Margin="10"></Button>
+            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" HorizontalAlignment="Left" Margin="10"></Button>
         </Grid>
     </Grid>
 </Page>

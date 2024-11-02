@@ -18,6 +18,7 @@ namespace MasterPol.Data
         public NameProduction()
         {
             this.PartnerProducts = new HashSet<PartnerProducts>();
+            this.Products = new HashSet<Products>();
         }
     
         public int ID { get; set; }
@@ -25,5 +26,7 @@ namespace MasterPol.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PartnerProducts> PartnerProducts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

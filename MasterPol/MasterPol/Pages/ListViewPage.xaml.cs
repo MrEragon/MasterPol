@@ -30,21 +30,18 @@ namespace MasterPol.Pages
         {
             ViewPartner.ItemsSource = Data.ProductsTrainingEntities.GetContext().Partners.ToList();
         }
-        
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (Classes.Manager.MainFrame.CanGoBack)
-            {
-                Classes.Manager.MainFrame.GoBack();
-            }
-        }
-
+        public List<Data.Partners> _currentProducts = Data.ProductsTrainingEntities.GetContext().Partners.ToList();
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Classes.Manager.MainFrame.Navigate(new Pages.AddorEditPage((sender as Button).DataContext as Data.Partners));
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Manager.MainFrame.Navigate(new Pages.AddorEditPage(null));
+        }
+
+        private void HistoryButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

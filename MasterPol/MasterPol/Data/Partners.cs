@@ -22,7 +22,7 @@ namespace MasterPol.Data
         public string DirectorPatronymic { get; set; }
         public string EmailPartner { get; set; }
         public string PhonePartner { get; set; }
-        public int MailIndex { get; set; }
+        public Nullable<int> MailIndex { get; set; }
         public string Area { get; set; }
         public string City { get; set; }
         public string Street { get; set; }

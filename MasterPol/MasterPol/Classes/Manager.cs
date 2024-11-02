@@ -11,5 +11,6 @@ namespace MasterPol.Classes
     internal class Manager
     {
         public static Frame MainFrame { get; set; }
+        public static Data.Partners Partners { get; set; }
     }
 }

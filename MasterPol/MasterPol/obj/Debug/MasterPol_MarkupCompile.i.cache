@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\
+C:\Users\Koosh\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\
 MasterPol
 none
 false
 DEBUG;TRACE
-C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\App.xaml
-21459994833
+C:\Users\Koosh\Desktop\MasterPol\MasterPol\MasterPol\App.xaml
+4-349102135
 2367394133
-20693854995
-18-1586812575
-MainWindow.xaml;Pages\ListViewPage.xaml;
+22-35247017
+18-509589971
+MainWindow.xaml;Pages\AddorEditPage.xaml;Pages\HistoryPage.xaml;Pages\ListViewPage.xaml;
 
-False
+True
 

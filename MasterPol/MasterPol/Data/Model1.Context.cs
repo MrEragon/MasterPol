@@ -27,10 +27,10 @@ namespace MasterPol.Data
             if (_context == null)
             {
                 _context = new ProductsTrainingEntities();
-                
             }
             return _context;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
