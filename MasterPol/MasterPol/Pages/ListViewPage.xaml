@@ -15,18 +15,17 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="1">
-            <ListView x:Name="ViewPartner" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <ListView x:Name="ViewPartner" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="200"/>
-                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="300"/>
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="200"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0">
-                                <TextBlock>
+                                <TextBlock FontSize="20">
                                     <TextBlock.Text>
                                         <MultiBinding StringFormat="{}{0} {1}">
                                             <Binding Path="TypePartner.Name"></Binding>
@@ -48,7 +47,7 @@
                             </StackPanel>
                             <Label Grid.Column="1" Content="error!"></Label>
                             <Button Grid.Column="2" Content="Редактировать" x:Name="EditButton" Click="EditButton_Click"></Button>
-                            <Button Grid.Column="3" Content="Посмотреть историю" x:Name="HistoryButton" Click="HistoryButton_Click"></Button>
+                            
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -56,6 +55,7 @@
         </Grid>
         <Grid Grid.Row="2">
             <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" HorizontalAlignment="Left" Margin="10"></Button>
+            <Button Content="Посмотреть историю" x:Name="HistoryButton" Click="HistoryButton_Click" HorizontalAlignment="Right" Margin="10"></Button>
         </Grid>
     </Grid>
 </Page>

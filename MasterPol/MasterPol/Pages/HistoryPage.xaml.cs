@@ -23,6 +23,28 @@ namespace MasterPol.Pages
         public HistoryPage()
         {
             InitializeComponent();
+
+            Init();
+
+        }
+
+        public void Init()
+        {
+            HistoryDataGrid.ItemsSource = Data.ProductsTrainingEntities.GetContext().PartnerProducts.ToList();
+
+            var ProduceList = Data.ProductsTrainingEntities.GetContext().NamePartner.ToList();
+            ProduceList.Insert(0, new Data.NamePartner { Name = "Все партнеры" });
+            PartnerSortComboBox.ItemsSource = ProduceList;
+            PartnerSortComboBox.SelectedIndex = 0;
+
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Classes.Manager.MainFrame.CanGoBack)
+            {
+                Classes.Manager.MainFrame.GoBack();
+            }
         }
     }
 }

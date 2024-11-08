@@ -49,7 +49,6 @@ C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.g.re
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.Properties.Resources.resources
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.GenerateResource.cache
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.CoreCompileInputs.cache
-C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.CopyComplete
 C:\Users\Koosh\Desktop\ \MasterPol\MasterPol\MasterPol\bin\Debug\MasterPol.exe.config
 C:\Users\Koosh\Desktop\ \MasterPol\MasterPol\MasterPol\bin\Debug\MasterPol.exe
 C:\Users\Koosh\Desktop\ \MasterPol\MasterPol\MasterPol\bin\Debug\MasterPol.pdb
@@ -104,3 +103,8 @@ C:\Users\Koosh\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.Propert
 C:\Users\Koosh\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.GenerateResource.cache
 C:\Users\Koosh\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.CoreCompileInputs.cache
 C:\Users\Koosh\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.Up2Date
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\AddorEditPage.g.cs
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryPage.g.cs
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\AddorEditPage.baml
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryPage.baml
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.Up2Date

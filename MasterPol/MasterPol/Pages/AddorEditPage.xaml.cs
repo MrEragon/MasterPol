@@ -95,7 +95,14 @@ namespace MasterPol.Pages
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
 
+            }
+            catch 
+            {
+            
+            }
         }
     }
 }

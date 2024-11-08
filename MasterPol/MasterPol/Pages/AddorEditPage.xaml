@@ -13,67 +13,45 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="350"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0">
-                <Label Content="Наименование:"></Label>
-                <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="1" Grid.Column="0">
-                <Label Content="Тип партнера:"></Label>
-                <ComboBox x:Name="TypePartnerComboBox" HorizontalAlignment="Left" Margin="10" DisplayMemberPath="Name"></ComboBox>
-            </Grid>
-            <Grid Grid.Row="2" Grid.Column="0">
-                <Label Content="Рейтинг:"></Label>
-                <TextBox x:Name="Rating" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="3" Grid.Column="0">
-                <Label Content="Город:"></Label>
-                <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="4" Grid.Column="0">
-                <Label Content="Область:"></Label>
-                <TextBox x:Name="AreaTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="5" Grid.Column="0">
-                <Label Content="Улица:"></Label>
-                <TextBox x:Name="StreetTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="0" Grid.Column="1">
-                <Label Content="Дом:"></Label>
-                <TextBox x:Name="HouseTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="1" Grid.Column="1">
-                <Label Content="Фамилия Директора:"></Label>
-                <TextBox x:Name="LastNameBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="2" Grid.Column="1">
-                <Label Content="Имя Директора:"></Label>
-                <TextBox x:Name="FirstNameBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="3" Grid.Column="1">
-                <Label Content="Отчество Директора(при наличии):"></Label>
-                <TextBox x:Name="PatronymicTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="4" Grid.Column="1">
-                <Label Content="Телефон компании:"></Label>
-                <TextBox x:Name="PhoneNumberTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
-            <Grid Grid.Row="5" Grid.Column="1">
-                <Label Content="Email компании:"></Label>
-                <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Margin="10"></TextBox>
-            </Grid>
+            <Label Content="Наименование:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="NameTextBox" Margin="10" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Тип партнера:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <ComboBox x:Name="TypePartnerComboBox" Margin="10" DisplayMemberPath="Name" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></ComboBox>
+            <Label Content="Рейтинг:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="Rating" Grid.Row="2" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Город:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="CityTextBox" Grid.Row="3" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Область:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="AreaTextBox" Margin="10" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Улица:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="StreetTextBox" Grid.Row="5" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Дом:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="HouseTextBox" Grid.Row="0" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Фамилия Директора:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="LastNameBox" Grid.Row="1" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Имя Директора:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="FirstNameBox" Grid.Row="2" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <TextBlock Text="Отчество Директора (при наличии):" TextWrapping="Wrap" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="PatronymicTextBox" Grid.Row="3" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Телефон компании:" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="PhoneNumberTextBox" Grid.Row="4" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Email компании:" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="EmailTextBox" Grid.Row="5" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
         </Grid>
         <Grid Grid.Row="1">
             <Button Content="Назад" x:Name="BackButton" Click="BackButton_Click" HorizontalAlignment="Left" Margin="10"></Button>

@@ -9,8 +9,21 @@
       Title="HistoryPage">
 
     <Grid>
-        <DataGrid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="HistoryDataGrid" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Наименование товара" Binding="{Binding NameProduction.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Партнер" Binding="{Binding NamePartner.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Кол-во товара" Binding="{Binding CountProduction}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата продажи" Binding="{Binding DateOfSell, StringFormat= \{0:yyyy-MM-dd\}}"></DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
+        <ComboBox x:Name="PartnerSortComboBox" Grid.Row="0" HorizontalAlignment="Left" Margin="10" Width="150" DisplayMemberPath="Name"></ComboBox>
+        <Button Grid.Row="2" x:Name="BackButton" Content="Назад" HorizontalAlignment="Center" Click="BackButton_Click"></Button>
     </Grid>
 </Page>
