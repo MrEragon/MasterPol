@@ -21,6 +21,7 @@ namespace MasterPol.Pages
     /// </summary>
     public partial class AddorEditPage : Page
     {
+        public ListViewPage ListViewPage { get; set; }
         public string FlagAddOrEdit = "default";
         public Data.Partners CurrentProduct {  get; set; }
         public AddorEditPage(Data.Partners selectedPartner)
@@ -97,11 +98,134 @@ namespace MasterPol.Pages
         {
             try
             {
+                StringBuilder errors = new StringBuilder();
 
+                if (string.IsNullOrEmpty(NameTextBox.Text))
+                {
+                    errors.AppendLine("Заполните наименование");
+                }
+                if (TypePartnerComboBox.SelectedItem == null)
+                {
+                    errors.AppendLine("Выберите тип партнера");
+                }
+                if (string.IsNullOrEmpty(Rating.Text))
+                {
+                    errors.AppendLine("Заполните рейтинг");
+                }
+                else
+                {
+                    var tryCount = Int32.TryParse(Rating.Text, out var resultCount);
+                    if (!tryCount)
+                    {
+                        errors.AppendLine("Рейтинг - целое число");
+                    }
+                    else if (resultCount < 0)
+                    {
+                        errors.AppendLine("Рейтинг не должен быть отрицательный");
+                    }
+                }
+                if (string.IsNullOrEmpty(CityTextBox.Text))
+                {
+                    errors.AppendLine("Заполните город");
+                }
+                if (string.IsNullOrEmpty(AreaTextBox.Text))
+                {
+                    errors.AppendLine("Заполните область");
+                }
+                if (string.IsNullOrEmpty(StreetTextBox.Text))
+                {
+                    errors.AppendLine("Заполните улицу");
+                }
+                if (string.IsNullOrEmpty(HouseTextBox.Text))
+                {
+                    errors.AppendLine("Заполните дом");
+                }
+                if (string.IsNullOrEmpty(LastNameBox.Text))
+                {
+                    errors.AppendLine("Заполните фамилию директора");
+                }
+                if (string.IsNullOrEmpty(FirstNameBox.Text))
+                {
+                    errors.AppendLine("Заполните имя директора");
+                }
+                if (string.IsNullOrEmpty(PhoneNumberTextBox.Text))
+                {
+                    errors.AppendLine("Заполните номер телефона");
+                }
+                else if (!PhoneNumberTextBox.Text.StartsWith("+"))
+                {
+                    errors.AppendLine("Номер телефона должен начинаться с + ");
+                }
+                if (string.IsNullOrEmpty(EmailTextBox.Text))
+                {
+                    errors.AppendLine("Заполните Email");
+                }
+
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString(), "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+
+                
+
+                var searchPartner = (from obj in Data.ProductsTrainingEntities.GetContext().NamePartner
+                                  where obj.Name == NameTextBox.Text
+                                  select obj).FirstOrDefault();
+
+                if (searchPartner != null)
+                {
+                    CurrentProduct.IDNamePartner = searchPartner.ID;
+                }
+                else
+                {
+                    Data.NamePartner PartnerName = new Data.NamePartner()
+                    {
+                        Name = NameTextBox.Text
+                    };
+                    Data.ProductsTrainingEntities.GetContext().NamePartner.Add(PartnerName);
+                    Data.ProductsTrainingEntities.GetContext().SaveChanges();
+
+                    CurrentProduct.IDNamePartner = PartnerName.ID;
+                }
+                
+                var selectedTypePartner = TypePartnerComboBox.SelectedItem as Data.Partners;
+                
+                CurrentProduct.IDTypePartner = selectedTypePartner.ID;
+                CurrentProduct.Rating = Convert.ToInt32(Rating.Text);
+                CurrentProduct.City = CityTextBox.Text;
+                CurrentProduct.Area = AreaTextBox.Text;
+                CurrentProduct.Street = StreetTextBox.Text;
+                CurrentProduct.House = Convert.ToInt32(HouseTextBox.Text);
+                CurrentProduct.DirectorLastName = LastNameBox.Text;
+                CurrentProduct.DirectorFirstName = FirstNameBox.Text;
+                CurrentProduct.DirectorPatronymic = PatronymicTextBox.Text;
+                CurrentProduct.PhonePartner = PhoneNumberTextBox.Text;
+                CurrentProduct.EmailPartner = EmailTextBox.Text;
+
+                if (FlagAddOrEdit == "edit")
+                {
+                    Data.ProductsTrainingEntities.GetContext().SaveChanges();
+
+                    MessageBox.Show("Успешно сохранено!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else if (FlagAddOrEdit == "add")
+                {
+                    Data.ProductsTrainingEntities.GetContext().Partners.Add(CurrentProduct);
+                    Data.ProductsTrainingEntities.GetContext().SaveChanges();
+
+                    MessageBox.Show("Успешно добавлено!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                if (ListViewPage != null)
+                {
+                    ListViewPage.Init();
+                }
             }
-            catch 
+            catch (Exception ex)
             {
-            
+                MessageBox.Show(ex.ToString(), "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

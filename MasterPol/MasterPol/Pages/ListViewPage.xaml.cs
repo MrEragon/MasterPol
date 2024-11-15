@@ -26,7 +26,7 @@ namespace MasterPol.Pages
             Init();
         }
 
-        private void Init()
+        public void Init()
         {
             ViewPartner.ItemsSource = Data.ProductsTrainingEntities.GetContext().Partners.ToList();
         }

@@ -107,4 +107,6 @@ C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\AddorEdi
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryPage.g.cs
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\AddorEditPage.baml
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryPage.baml
-C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.Up2Date
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\LoginPage.g.cs
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\LoginPage.baml
+C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.CopyComplete

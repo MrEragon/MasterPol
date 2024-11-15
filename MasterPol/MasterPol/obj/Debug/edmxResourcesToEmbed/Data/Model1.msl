@@ -38,6 +38,7 @@
           <ScalarProperty Name="DirectorFirstName" ColumnName="DirectorFirstName" />
           <ScalarProperty Name="DirectorPatronymic" ColumnName="DirectorPatronymic" />
           <ScalarProperty Name="EmailPartner" ColumnName="EmailPartner" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="PhonePartner" ColumnName="PhonePartner" />
           <ScalarProperty Name="MailIndex" ColumnName="MailIndex" />
           <ScalarProperty Name="Area" ColumnName="Area" />
@@ -54,7 +55,7 @@
         <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDProductType" ColumnName="IDProductType" />
-          <ScalarProperty Name="IDNameProduction" ColumnName="IDNameProduction" />
+          <ScalarProperty Name="NameProduction" ColumnName="NameProduction" />
           <ScalarProperty Name="Article" ColumnName="Article" />
           <ScalarProperty Name="MinCostForPartner" ColumnName="MinCostForPartner" />
         </MappingFragment>

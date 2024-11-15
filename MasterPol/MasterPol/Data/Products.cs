@@ -16,11 +16,10 @@ namespace MasterPol.Data
     {
         public int ID { get; set; }
         public int IDProductType { get; set; }
-        public int IDNameProduction { get; set; }
+        public string NameProduction { get; set; }
         public int Article { get; set; }
         public decimal MinCostForPartner { get; set; }
     
-        public virtual NameProduction NameProduction { get; set; }
         public virtual ProductType ProductType { get; set; }
     }
 }

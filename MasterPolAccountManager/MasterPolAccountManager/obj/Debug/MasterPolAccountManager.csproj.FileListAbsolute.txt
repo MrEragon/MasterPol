@@ -8,6 +8,6 @@ C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountMana
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.AssemblyReference.cache
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.CoreCompileInputs.cache
-C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPo.C0EB29C5.Up2Date
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.exe
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.pdb
+C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.CopyComplete

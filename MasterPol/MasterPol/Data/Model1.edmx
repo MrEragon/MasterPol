@@ -40,13 +40,14 @@
           <Property Name="DirectorFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DirectorPatronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EmailPartner" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PhonePartner" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="MailIndex" Type="int" />
+          <Property Name="MailIndex" Type="int" Nullable="false" />
           <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Street" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="House" Type="int" Nullable="false" />
-          <Property Name="INN" Type="nvarchar" MaxLength="50" />
+          <Property Name="INN" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Rating" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Products">
@@ -55,7 +56,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDProductType" Type="int" Nullable="false" />
-          <Property Name="IDNameProduction" Type="int" Nullable="false" />
+          <Property Name="NameProduction" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="Article" Type="int" Nullable="false" />
           <Property Name="MinCostForPartner" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
@@ -140,18 +141,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Products_NameProduction">
-          <End Role="NameProduction" Type="Self.NameProduction" Multiplicity="1" />
-          <End Role="Products" Type="Self.Products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NameProduction">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Products">
-              <PropertyRef Name="IDNameProduction" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Products_ProductType">
           <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -190,10 +179,6 @@
             <End Role="TypePartner" EntitySet="TypePartner" />
             <End Role="Partners" EntitySet="Partners" />
           </AssociationSet>
-          <AssociationSet Name="FK_Products_NameProduction" Association="Self.FK_Products_NameProduction">
-            <End Role="NameProduction" EntitySet="NameProduction" />
-            <End Role="Products" EntitySet="Products" />
-          </AssociationSet>
           <AssociationSet Name="FK_Products_ProductType" Association="Self.FK_Products_ProductType">
             <End Role="ProductType" EntitySet="ProductType" />
             <End Role="Products" EntitySet="Products" />
@@ -220,7 +205,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="PartnerProducts" Relationship="Self.FK_PartnerProducts_NameProduction" FromRole="NameProduction" ToRole="PartnerProducts" />
-          <NavigationProperty Name="Products" Relationship="Self.FK_Products_NameProduction" FromRole="NameProduction" ToRole="Products" />
         </EntityType>
         <EntityType Name="PartnerProducts">
           <Key>
@@ -245,13 +229,14 @@
           <Property Name="DirectorFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DirectorPatronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmailPartner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PhonePartner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MailIndex" Type="Int32" />
+          <Property Name="MailIndex" Type="Int32" Nullable="false" />
           <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="House" Type="Int32" Nullable="false" />
-          <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Rating" Type="Int32" Nullable="false" />
           <NavigationProperty Name="NamePartner" Relationship="Self.FK_Partners_NamePartner" FromRole="Partners" ToRole="NamePartner" />
           <NavigationProperty Name="TypePartner" Relationship="Self.FK_Partners_TypePartner" FromRole="Partners" ToRole="TypePartner" />
@@ -262,10 +247,9 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDProductType" Type="Int32" Nullable="false" />
-          <Property Name="IDNameProduction" Type="Int32" Nullable="false" />
+          <Property Name="NameProduction" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Article" Type="Int32" Nullable="false" />
           <Property Name="MinCostForPartner" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="NameProduction" Relationship="Self.FK_Products_NameProduction" FromRole="Products" ToRole="NameProduction" />
           <NavigationProperty Name="ProductType" Relationship="Self.FK_Products_ProductType" FromRole="Products" ToRole="ProductType" />
         </EntityType>
         <EntityType Name="ProductType">
@@ -339,18 +323,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Products_NameProduction">
-          <End Role="NameProduction" Type="Self.NameProduction" Multiplicity="1" />
-          <End Role="Products" Type="Self.Products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NameProduction">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Products">
-              <PropertyRef Name="IDNameProduction" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Partners_TypePartner">
           <End Role="TypePartner" Type="Self.TypePartner" Multiplicity="1" />
           <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
@@ -396,10 +368,6 @@
           <AssociationSet Name="FK_PartnerProducts_NameProduction" Association="Self.FK_PartnerProducts_NameProduction">
             <End Role="NameProduction" EntitySet="NameProduction" />
             <End Role="PartnerProducts" EntitySet="PartnerProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Products_NameProduction" Association="Self.FK_Products_NameProduction">
-            <End Role="NameProduction" EntitySet="NameProduction" />
-            <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK_Partners_TypePartner" Association="Self.FK_Partners_TypePartner">
             <End Role="TypePartner" EntitySet="TypePartner" />
@@ -453,6 +421,7 @@
                 <ScalarProperty Name="DirectorFirstName" ColumnName="DirectorFirstName" />
                 <ScalarProperty Name="DirectorPatronymic" ColumnName="DirectorPatronymic" />
                 <ScalarProperty Name="EmailPartner" ColumnName="EmailPartner" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="PhonePartner" ColumnName="PhonePartner" />
                 <ScalarProperty Name="MailIndex" ColumnName="MailIndex" />
                 <ScalarProperty Name="Area" ColumnName="Area" />
@@ -469,7 +438,7 @@
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDProductType" ColumnName="IDProductType" />
-                <ScalarProperty Name="IDNameProduction" ColumnName="IDNameProduction" />
+                <ScalarProperty Name="NameProduction" ColumnName="NameProduction" />
                 <ScalarProperty Name="Article" ColumnName="Article" />
                 <ScalarProperty Name="MinCostForPartner" ColumnName="MinCostForPartner" />
               </MappingFragment>
