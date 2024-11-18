@@ -45,5 +45,49 @@ namespace MasterPol.Pages
         {
             Classes.Manager.MainFrame.Navigate(new Pages.HistoryPage());
         }
+
+        private void DiscountBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            var discountbox = sender as TextBlock;
+            var partner = discountbox.DataContext as Data.Partners;
+
+            try
+            {
+                if (partner != null)
+                {
+                    if (partner.Discount == null)
+                    {
+                        var countproduction = Data.ProductsTrainingEntities.GetContext().PartnerProducts.Where(d => d.IDNamePartner == partner.IDNamePartner).Sum(d => d.CountProduction);
+
+                        int discount = 0;
+                        if (countproduction >= 300000)
+                        {
+                            discount = 15;
+                        }
+                        else if (countproduction >= 50000)
+                        {
+                            discount = 10;
+                        }
+                        else if (countproduction >= 10000)
+                        {
+                            discount = 5;
+                        }
+                        else
+                        {
+                            discount = 0;
+                        }
+                        partner.Discount = discount;
+                    }
+
+                    discountbox.Text = $"{partner.Discount}%";
+
+                    discountbox.Loaded -= DiscountBox_Loaded;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

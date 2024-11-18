@@ -68,7 +68,7 @@ namespace MasterPol.Pages
                 {
                     NameTextBox.Text = CurrentProduct.NamePartner.Name;
                     TypePartnerComboBox.SelectedItem = Data.ProductsTrainingEntities.GetContext().TypePartner.Where(d => d.ID == CurrentProduct.IDTypePartner).FirstOrDefault();
-                    Rating.Text = CurrentProduct.NamePartner.Name;
+                    Rating.Text = CurrentProduct.Rating.ToString();
                     CityTextBox.Text = CurrentProduct.City;
                     AreaTextBox.Text = CurrentProduct.Area;
                     StreetTextBox.Text = CurrentProduct.Street;
@@ -180,17 +180,17 @@ namespace MasterPol.Pages
                 }
                 else
                 {
-                    Data.NamePartner PartnerName = new Data.NamePartner()
+                    Data.NamePartner partnername = new Data.NamePartner()
                     {
                         Name = NameTextBox.Text
                     };
-                    Data.ProductsTrainingEntities.GetContext().NamePartner.Add(PartnerName);
+                    Data.ProductsTrainingEntities.GetContext().NamePartner.Add(partnername);
                     Data.ProductsTrainingEntities.GetContext().SaveChanges();
 
-                    CurrentProduct.IDNamePartner = PartnerName.ID;
+                    CurrentProduct.IDNamePartner = partnername.ID;
                 }
                 
-                var selectedTypePartner = TypePartnerComboBox.SelectedItem as Data.Partners;
+                var selectedTypePartner = TypePartnerComboBox.SelectedItem as Data.TypePartner;
                 
                 CurrentProduct.IDTypePartner = selectedTypePartner.ID;
                 CurrentProduct.Rating = Convert.ToInt32(Rating.Text);
@@ -218,10 +218,7 @@ namespace MasterPol.Pages
                     MessageBox.Show("Успешно добавлено!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
 
-                if (ListViewPage != null)
-                {
-                    ListViewPage.Init();
-                }
+                Classes.Manager.MainFrame.Navigate(new Pages.ListViewPage());
             }
             catch (Exception ex)
             {

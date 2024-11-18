@@ -23,7 +23,6 @@
                 <DataGridTextColumn Header="Дата продажи" Binding="{Binding DateOfSell, StringFormat= \{0:yyyy-MM-dd\}}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox x:Name="PartnerSortComboBox" Grid.Row="0" HorizontalAlignment="Left" Margin="10" Width="150" DisplayMemberPath="Name"></ComboBox>
         <Button Grid.Row="2" x:Name="BackButton" Content="Назад" HorizontalAlignment="Center" Click="BackButton_Click"></Button>
     </Grid>
 </Page>

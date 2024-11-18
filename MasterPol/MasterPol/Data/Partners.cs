@@ -20,6 +20,8 @@ namespace MasterPol.Data
         public string DirectorLastName { get; set; }
         public string DirectorFirstName { get; set; }
         public string DirectorPatronymic { get; set; }
+
+        public int? Discount { get; set; }
         public string EmailPartner { get; set; }
         public string Password { get; set; }
         public string PhonePartner { get; set; }

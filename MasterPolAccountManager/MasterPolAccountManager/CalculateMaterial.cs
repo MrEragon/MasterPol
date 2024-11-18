@@ -13,15 +13,17 @@ namespace MasterPolAccountManager
         {
             try
             {
-                double countOn1 = param1 * param2 * Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().ProductType.Where(d => d.ID == IdTypeOfProduct).FirstOrDefault());
+                double countOn1 = param1 * param2 * Convert.ToDouble((Data.ProductsTrainingEntities.GetContext().ProductType.Where(d => d.ID == IdTypeOfProduct).FirstOrDefault().Coeff));
 
-                countOn1 += (param1 * param2 * Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().ProductType.Where(d => d.ID == IdTypeOfProduct).FirstOrDefault())) *
-                    Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().TypeMaterial.Where(d => d.ID == IdTypeOfMaterial).FirstOrDefault());
+                countOn1 += (param1 * param2 * Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().ProductType.Where(d => d.ID == IdTypeOfProduct).FirstOrDefault().Coeff) *
+                    Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().TypeMaterial.Where(d => d.ID == IdTypeOfMaterial).FirstOrDefault().Percantage));
 
-                return Convert.ToInt32(Math.Round(countOn1 * CountProducts));
+                int result = Convert.ToInt32(Math.Round(countOn1 * CountProducts));
+                return result;
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return -1;
             }
         }
