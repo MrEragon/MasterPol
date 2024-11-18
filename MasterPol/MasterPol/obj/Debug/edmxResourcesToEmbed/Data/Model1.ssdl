@@ -33,9 +33,9 @@
     <Property Name="IDNamePartner" Type="int" Nullable="false" />
     <Property Name="DirectorLastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DirectorFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DirectorPatronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DirectorPatronymic" Type="nvarchar" MaxLength="50" />
     <Property Name="EmailPartner" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="PhonePartner" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MailIndex" Type="int" Nullable="false" />
     <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />

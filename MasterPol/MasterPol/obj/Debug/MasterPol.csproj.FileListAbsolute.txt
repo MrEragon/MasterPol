@@ -110,3 +110,7 @@ C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryP
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\LoginPage.g.cs
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\LoginPage.baml
 C:\Users\students\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\MasterPol.csproj.CopyComplete
+C:\Users\lisav\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\AddorEditPage.g.cs
+C:\Users\lisav\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryPage.g.cs
+C:\Users\lisav\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\AddorEditPage.baml
+C:\Users\lisav\Desktop\MasterPol\MasterPol\MasterPol\obj\Debug\Pages\HistoryPage.baml

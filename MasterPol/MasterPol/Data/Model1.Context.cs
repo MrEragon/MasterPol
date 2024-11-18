@@ -20,6 +20,7 @@ namespace MasterPol.Data
         {
         }
 
+
         public static ProductsTrainingEntities _context;
 
         public static ProductsTrainingEntities GetContext()
@@ -27,6 +28,7 @@ namespace MasterPol.Data
             if (_context == null)
             {
                 _context = new ProductsTrainingEntities();
+                
             }
             return _context;
         }

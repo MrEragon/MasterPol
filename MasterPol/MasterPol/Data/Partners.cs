@@ -20,8 +20,6 @@ namespace MasterPol.Data
         public string DirectorLastName { get; set; }
         public string DirectorFirstName { get; set; }
         public string DirectorPatronymic { get; set; }
-
-        public int? Discount { get; set; }
         public string EmailPartner { get; set; }
         public string Password { get; set; }
         public string PhonePartner { get; set; }
@@ -32,6 +30,8 @@ namespace MasterPol.Data
         public int House { get; set; }
         public string INN { get; set; }
         public int Rating { get; set; }
+
+        public int? Discount { get; set; }
     
         public virtual NamePartner NamePartner { get; set; }
         public virtual TypePartner TypePartner { get; set; }

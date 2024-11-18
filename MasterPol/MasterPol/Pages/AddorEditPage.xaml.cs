@@ -21,21 +21,20 @@ namespace MasterPol.Pages
     /// </summary>
     public partial class AddorEditPage : Page
     {
-        public ListViewPage ListViewPage { get; set; }
         public string FlagAddOrEdit = "default";
-        public Data.Partners CurrentProduct {  get; set; }
-        public AddorEditPage(Data.Partners selectedPartner)
+        public Data.Partners CurrentProduct = new Data.Partners();
+        public AddorEditPage(Data.Partners _selectedPartner)
         {
             InitializeComponent();
            
 
-            if (selectedPartner == null)
+            if (_selectedPartner == null)
             {
                 FlagAddOrEdit = "add";
             }
             else
             {
-                CurrentProduct = selectedPartner;
+                CurrentProduct = _selectedPartner;
                 FlagAddOrEdit = "edit";
             }
 
@@ -58,6 +57,8 @@ namespace MasterPol.Pages
                     AreaTextBox.Text = string.Empty;
                     StreetTextBox.Text = string.Empty;
                     HouseTextBox.Text = string.Empty;
+                    INNTextBox.Text = string.Empty;
+                    IndexTextBox.Text = string.Empty;
                     LastNameBox.Text = string.Empty;
                     FirstNameBox.Text = string.Empty;
                     PatronymicTextBox.Text = string.Empty;
@@ -73,6 +74,8 @@ namespace MasterPol.Pages
                     AreaTextBox.Text = CurrentProduct.Area;
                     StreetTextBox.Text = CurrentProduct.Street;
                     HouseTextBox.Text = CurrentProduct.House.ToString();
+                    INNTextBox.Text = CurrentProduct.INN.ToString();
+                    IndexTextBox.Text = CurrentProduct.MailIndex.ToString();
                     LastNameBox.Text = CurrentProduct.DirectorLastName;
                     FirstNameBox.Text = CurrentProduct.DirectorFirstName;
                     PatronymicTextBox.Text = CurrentProduct.DirectorPatronymic;
@@ -114,14 +117,14 @@ namespace MasterPol.Pages
                 }
                 else
                 {
-                    var tryCount = Int32.TryParse(Rating.Text, out var resultCount);
-                    if (!tryCount)
+                    var tryRating = Int32.TryParse(Rating.Text, out var resultRating);
+                    if (!tryRating)
                     {
-                        errors.AppendLine("Рейтинг - целое число");
+                        errors.AppendLine("Рейтинг должен быть в виде целого числа");
                     }
-                    else if (resultCount < 0)
+                    else if (resultRating < 0)
                     {
-                        errors.AppendLine("Рейтинг не должен быть отрицательный");
+                        errors.AppendLine("Рейтинг не может быть отрицательным");
                     }
                 }
                 if (string.IsNullOrEmpty(CityTextBox.Text))
@@ -139,6 +142,26 @@ namespace MasterPol.Pages
                 if (string.IsNullOrEmpty(HouseTextBox.Text))
                 {
                     errors.AppendLine("Заполните дом");
+                }
+                if (string.IsNullOrEmpty(INNTextBox.Text))
+                {
+                    errors.AppendLine("Заполните ИНН");
+                }
+                if (string.IsNullOrEmpty(IndexTextBox.Text))
+                {
+                    errors.AppendLine("Заполните Индекс");
+                }
+                else
+                {
+                    var tryIndex = Int32.TryParse(IndexTextBox.Text, out var resultIndex);
+                    if (!tryIndex)
+                    {
+                        errors.AppendLine("Индекс должен быть в виде целого числа");
+                    }
+                    else if (resultIndex < 0)
+                    {
+                        errors.AppendLine("Индекс не может быть отрицательным");
+                    }
                 }
                 if (string.IsNullOrEmpty(LastNameBox.Text))
                 {
@@ -166,9 +189,6 @@ namespace MasterPol.Pages
                     MessageBox.Show(errors.ToString(), "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-
-
-                
 
                 var searchPartner = (from obj in Data.ProductsTrainingEntities.GetContext().NamePartner
                                   where obj.Name == NameTextBox.Text
@@ -198,6 +218,8 @@ namespace MasterPol.Pages
                 CurrentProduct.Area = AreaTextBox.Text;
                 CurrentProduct.Street = StreetTextBox.Text;
                 CurrentProduct.House = Convert.ToInt32(HouseTextBox.Text);
+                CurrentProduct.INN = INNTextBox.Text;
+                CurrentProduct.MailIndex = Convert.ToInt32(IndexTextBox.Text);
                 CurrentProduct.DirectorLastName = LastNameBox.Text;
                 CurrentProduct.DirectorFirstName = FirstNameBox.Text;
                 CurrentProduct.DirectorPatronymic = PatronymicTextBox.Text;

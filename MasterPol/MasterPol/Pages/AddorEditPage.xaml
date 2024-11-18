@@ -27,6 +27,7 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <Label Content="Наименование:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
             <TextBox x:Name="NameTextBox" Margin="10" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
@@ -40,18 +41,22 @@
             <TextBox x:Name="AreaTextBox" Margin="10" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
             <Label Content="Улица:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
             <TextBox x:Name="StreetTextBox" Grid.Row="5" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-            <Label Content="Дом:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="HouseTextBox" Grid.Row="0" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-            <Label Content="Фамилия Директора:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="LastNameBox" Grid.Row="1" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-            <Label Content="Имя Директора:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="FirstNameBox" Grid.Row="2" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-            <TextBlock Text="Отчество Директора (при наличии):" TextWrapping="Wrap" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-            <TextBox x:Name="PatronymicTextBox" Grid.Row="3" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-            <Label Content="Телефон компании:" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="PhoneNumberTextBox" Grid.Row="4" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
-            <Label Content="Email компании:" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-            <TextBox x:Name="EmailTextBox" Grid.Row="5" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Дом:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="HouseTextBox" Grid.Row="6" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="ИНН:" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="INNTextBox" Grid.Row="0" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Индекс:" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="IndexTextBox" Grid.Row="1" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Фамилия Директора:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="LastNameBox" Grid.Row="2" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Имя Директора:" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="FirstNameBox" Grid.Row="3" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <TextBlock Text="Отчество Директора (при наличии):" TextWrapping="Wrap" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="PatronymicTextBox" Grid.Row="4" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Телефон компании:" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="PhoneNumberTextBox" Grid.Row="5" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
+            <Label Content="Email компании:" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <TextBox x:Name="EmailTextBox" Grid.Row="6" Grid.Column="3" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBox>
         </Grid>
         <Grid Grid.Row="1">
             <Button Content="Назад" x:Name="BackButton" Click="BackButton_Click" HorizontalAlignment="Left" Margin="10"></Button>
