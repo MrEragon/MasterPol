@@ -13,10 +13,13 @@ namespace MasterPolAccountManager
         {
             try
             {
-                double countOn1 = param1 * param2 * Convert.ToDouble((Data.ProductsTrainingEntities.GetContext().ProductType.Where(d => d.ID == IdTypeOfProduct).FirstOrDefault().Coeff));
+                double countOn1 = param1 * param2 * Convert.ToDouble((Data.ProductsTrainingEntities.GetContext().ProductType
+                    .Where(d => d.ID == IdTypeOfProduct).FirstOrDefault().Coeff));
 
-                countOn1 += (param1 * param2 * Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().ProductType.Where(d => d.ID == IdTypeOfProduct).FirstOrDefault().Coeff) *
-                    Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().TypeMaterial.Where(d => d.ID == IdTypeOfMaterial).FirstOrDefault().Percantage));
+                countOn1 += (param1 * param2 * Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().ProductType
+                    .Where(d => d.ID == IdTypeOfProduct).FirstOrDefault().Coeff) *
+                    Convert.ToDouble(Data.ProductsTrainingEntities.GetContext().TypeMaterial
+                    .Where(d => d.ID == IdTypeOfMaterial).FirstOrDefault().Percantage));
 
                 int result = Convert.ToInt32(Math.Round(countOn1 * CountProducts));
                 return result;

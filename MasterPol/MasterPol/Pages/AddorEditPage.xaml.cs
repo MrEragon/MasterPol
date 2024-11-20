@@ -68,7 +68,8 @@ namespace MasterPol.Pages
                 else if (FlagAddOrEdit == "edit")
                 {
                     NameTextBox.Text = CurrentProduct.NamePartner.Name;
-                    TypePartnerComboBox.SelectedItem = Data.ProductsTrainingEntities.GetContext().TypePartner.Where(d => d.ID == CurrentProduct.IDTypePartner).FirstOrDefault();
+                    TypePartnerComboBox.SelectedItem = Data.ProductsTrainingEntities.GetContext().TypePartner
+                        .Where(d => d.ID == CurrentProduct.IDTypePartner).FirstOrDefault();
                     Rating.Text = CurrentProduct.Rating.ToString();
                     CityTextBox.Text = CurrentProduct.City;
                     AreaTextBox.Text = CurrentProduct.Area;
@@ -126,6 +127,10 @@ namespace MasterPol.Pages
                     {
                         errors.AppendLine("Рейтинг не может быть отрицательным");
                     }
+                    else if (resultRating >10)
+                    {
+                        errors.AppendLine("Рейтинг не может быть больше 10");
+                    }
                 }
                 if (string.IsNullOrEmpty(CityTextBox.Text))
                 {
@@ -142,6 +147,18 @@ namespace MasterPol.Pages
                 if (string.IsNullOrEmpty(HouseTextBox.Text))
                 {
                     errors.AppendLine("Заполните дом");
+                }
+                else
+                {
+                    var tryHouse = Int32.TryParse(HouseTextBox.Text, out var resultHouse);
+                    if (!tryHouse)
+                    {
+                        errors.AppendLine("Дом должен быть в виде целого числа");
+                    }
+                    else if (resultHouse < 0)
+                    {
+                        errors.AppendLine("Дом не может быть отрицательным");
+                    }
                 }
                 if (string.IsNullOrEmpty(INNTextBox.Text))
                 {

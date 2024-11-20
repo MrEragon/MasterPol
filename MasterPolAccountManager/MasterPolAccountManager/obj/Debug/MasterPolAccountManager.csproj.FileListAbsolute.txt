@@ -11,3 +11,16 @@ C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountMana
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.exe
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.pdb
 C:\Users\students\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.CopyComplete
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\MasterPolAccountManager.exe.config
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\MasterPolAccountManager.exe
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\MasterPolAccountManager.pdb
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\EntityFramework.dll
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\EntityFramework.xml
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.AssemblyReference.cache
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.CoreCompileInputs.cache
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.csproj.CopyComplete
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.exe
+C:\Users\lisav\Desktop\MasterPol\MasterPolAccountManager\MasterPolAccountManager\obj\Debug\MasterPolAccountManager.pdb

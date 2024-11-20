@@ -57,7 +57,9 @@ namespace MasterPol.Pages
                 {
                     if (partner.Discount == null)
                     {
-                        var countproduction = Data.ProductsTrainingEntities.GetContext().PartnerProducts.Where(d => d.IDNamePartner == partner.IDNamePartner).Sum(d => d.CountProduction);
+                        var countproduction = Data.ProductsTrainingEntities.GetContext().PartnerProducts
+                            .Where(d => d.IDNamePartner == partner.IDNamePartner)
+                            .Sum(d => d.CountProduction);
 
                         int discount = 0;
                         if (countproduction >= 300000)
